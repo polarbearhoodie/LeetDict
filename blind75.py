@@ -79,11 +79,40 @@ def max_subarray(arr_in: list[int]) -> int:
 
 
 # same idea as max subarray
+# not necessarily? is there an O(n2)
 def max_product(arr_in: list[int]) -> int:
-    # partial_delimit negatives, floats
-    # full_delimit zeros
+    msf = 0
+    swap = [1, 1]  # edge case if max is 0?
 
-    total = 0
+    for x in arr_in:
+        swap = [x*y for y in swap]
+
+        if max(swap) > msf:
+            msf = max(swap)
+
+        if x < 0:
+            swap[0] = 1
+
+        if x == 0:
+            swap = [1, 1]
+
+    return msf
 
 
-    pass
+def watershed(arr):
+    start = 0
+    end = len(arr) - 1
+    msf = 0
+
+    while start < end:
+        lm = min(arr[start], arr[end]) * (end - start)
+        if lm > msf:
+            msf = lm
+
+        if arr[start] <= arr[end]:
+            start += 1
+        else:
+            end -= 1
+
+    return msf
+

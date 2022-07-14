@@ -1,14 +1,11 @@
-import leetcode as lc
-import telephone as tele
-import mergelinkedlists as mll
+import blind75 as bs
 
 if __name__ == '__main__':
-    a = mll.ListNode(1)
-    a.next = mll.ListNode(2)
-    b = mll.ListNode(1)
-    b.next = mll.ListNode1(3)
+    rand = [3, 9, 2, 4, 7, 2, 12, 6]
+    print(bs.watershed(rand))
 
+    a = [2, 3, -2, 4]
+    b = [-2, 0, -4]
 
-
-
-
+    print(bs.max_product(a))
+    print(bs.max_product(b))
