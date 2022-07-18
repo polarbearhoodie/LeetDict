@@ -24,12 +24,32 @@ class TicTacGame:
         if abs(sum([self.game_state[i][2 - i] for i in range(3)])) == 1:
             return True
 
+        # TODO
+        # what if there is a tie?
+
         return False
+
+    def show_state(self):
+        for row in self.game_state:
+            print(row)
+        return
 
 
 def play_game():
     # create game
+    game = TicTacGame()
+    toggle = True
+    while game.is_won() == false:
+        # show game
 
+        if toggle:
+            # place tile
+            pass
 
-    #
-    pass
+        else:
+            # opp place tile
+            pass
+
+        toggle = not toggle
+
+    # print the winner
